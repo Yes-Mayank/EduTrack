@@ -1,0 +1,109 @@
+================================================================
+  STSV International Sr. Secondary School — School Management App
+  Dhanupra, Arrah, Bihar (802301)
+================================================================
+
+WHAT THIS IS
+------------
+A fully working prototype of a 3-role (Teacher / Student / Parent)
+school management web app. EVERYTHING is stored in the browser's
+localStorage — there is no real backend, no database, no server.
+This makes the demo zero-cost to run and instantly portable.
+
+The app is built inside a TanStack Start shell (already used by your
+Lovable workspace) and the entire SPA lives under /src/app/. React
+Router v6 handles in-app routing, GSAP handles animations, DaisyUI
++ Tailwind v4 handles styling, Recharts handles graphs.
+
+
+HOW TO RUN LOCALLY
+------------------
+1.  bun install         (or npm install)
+2.  bun run dev          (or npm run dev)
+3.  Open the URL printed in the terminal (usually http://localhost:8080)
+
+The first time you load the app, demo seed data is written to
+localStorage automatically.
+
+
+DEMO ACCOUNTS (password is "stsv1234" for ALL)
+----------------------------------------------
+Teachers
+  priya@stsv.edu       (Mrs. Priya Sharma — has students + a graded quiz)
+  rajan@stsv.edu       (Mr. Rajan Mehta)
+
+Students (Class 10-A)
+  student101@stsv.edu  Aarav Kumar    (roll 101)
+  student102@stsv.edu  Ishita Singh   (roll 102)
+  student103@stsv.edu  Rohan Verma    (roll 103)
+  student104@stsv.edu  Sneha Patel    (roll 104)
+  student105@stsv.edu  Vihaan Roy     (roll 105)
+
+Parents
+  parent101@stsv.edu   (linked to Aarav, roll 101)
+  parent102@stsv.edu   (linked to Ishita, roll 102)
+
+On the Login page pick the correct ROLE in the dropdown — login
+fails if the role doesn't match the account.
+
+
+WHAT YOU MUST DO YOURSELF
+-------------------------
+1. ENABLE REAL EMAILS (optional)
+   The Send-Report / Contact-Teacher / Meeting-Request features
+   call EmailJS (https://www.emailjs.com). Without configuration
+   they show a friendly demo toast and DO NOT send any email.
+   To send real emails:
+     a. Create a free EmailJS account.
+     b. Create a service named exactly  service_stsv
+     c. Create a template named exactly template_report
+        with variables: {{to_email}}, {{subject}}, {{message}}
+     d. Copy your EmailJS PUBLIC KEY.
+     e. Log in as the teacher (or parent) → Profile page →
+        paste the key under "EmailJS public key" → Save.
+     The key is stored in localStorage on that browser only.
+
+2. RESET THE DEMO
+   If you want a clean slate, open browser DevTools → Application
+   → Local Storage → "Clear all". On next refresh the seed data
+   is re-created from scratch.
+
+3. DEPLOY (optional)
+   Click PUBLISH inside Lovable to get a public URL —
+   no extra configuration needed. localStorage stays per-browser
+   so each visitor gets their own private demo.
+
+
+KNOWN LIMITATIONS (because it is a prototype)
+---------------------------------------------
+- All data lives in the BROWSER. Clearing storage = losing data.
+- Two different devices / browsers = two completely separate
+  datasets (no sync).
+- Forgot-Password is simulated with a toast — no real email is sent.
+- File attachments (concern screenshots, quiz images) are UI
+  placeholders only.
+- "Send Marks to All Parents" simply counts recipients in demo mode.
+
+
+WHAT'S INCLUDED
+---------------
+Teacher: Dashboard, My Students (with profile modal + chart +
+  notes + email parent), Create Quiz (3-step), Scheduled Tests,
+  Results & Marks (with CSV export), Send Report (EmailJS),
+  Concerns (resolve workflow), Profile (EmailJS key).
+
+Student:  Dashboard (with daily quote, next-test countdown,
+  rank, recent chart), My Tests (Upcoming / Completed), Take
+  Quiz (timed, flag, sidebar grid, auto-submit, animated review),
+  My Results (with detail modal), Performance (line + bar + pie
+  charts + strengths/weaknesses), Raise Concern, Profile.
+
+Parent:  Dashboard, Child's Results (with printable report card),
+  Performance Report, Contact Teacher (EmailJS + sent history),
+  Notifications (filter + mark-all-read), Profile.
+
+Global:  Dark / Light theme toggle, hamburger mobile drawer,
+  GSAP page transitions, DaisyUI components throughout,
+  Recharts visualisations, role-protected routes.
+
+Enjoy.
