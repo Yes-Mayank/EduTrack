@@ -6,6 +6,7 @@
 EduTrack is a highly responsive, multi-role school portal featuring unified authentication and dedicated dashboards for **Teachers**, **Students**, and **Parents**. The project includes interactive quiz authoring, live-countdown timed assessments, student performance analytics (utilizing visual charts), digital report cards, EmailJS reports, and a concern ticketing system.
 
 ---
+<img width="1895" height="936" alt="image" src="https://github.com/user-attachments/assets/47505c0f-6aff-41b7-8f4e-72ce2a68b2e9" />
 
 ## ✨ System Highlights
 
